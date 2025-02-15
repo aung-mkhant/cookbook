@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: #F5F5F7;
+    color: #705C53;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+.container {
+    width: 100%;
+    padding: 10px;
+
+}
+.recipe-form {
+     display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.form-item {
+    display: flex;
+    margin: 32px 0;
+    gap: 24px;
+}
+.form-item textarea {
+    
+}
+.submit-button {
+    
+    width: auto;
+}
+
+.btn {
+  background: #3674B5;
+  background-image: -webkit-linear-gradient(top, #3674B5, #578FCA);
+  background-image: -moz-linear-gradient(top, #3674B5, #578FCA);
+  background-image: -ms-linear-gradient(top, #3674B5, #578FCA);
+  background-image: -o-linear-gradient(top, #3674B5, #578FCA);
+  background-image: linear-gradient(to bottom, #3674B5, #578FCA);
+  -webkit-border-radius: 19;
+  -moz-border-radius: 19;
+  border-radius: 19px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+/* Desktops (≥1024px) */
+@media (min-width: 1024px) {
+    .container {
+        width: 60%;
+    }
+}

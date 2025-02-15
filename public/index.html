@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookbook</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="navbar">
+                <a href="/">Home</a>
+                <a href="/recipe-form.html">Add Recipe</a>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Existing Recipes</h1>
+
+    <div class="container">
+        <h2>Snacks</h2>
+        <ul id="snack-list"></ul>
+
+        <h2>Salads</h2>
+        <ul id="salad-list"></ul>
+
+
+        <h2>Dishes</h2>
+        <ul id="dish-list"></ul>
+    </div>
+
+    <script>
+
+        fetch("/api/recipes")
+            .then(res => res.json())
+            .then(recipes => {
+                const snackList = document.getElementById("snack-list")
+                const saladList = document.getElementById("salad-list")
+                const dishList = document.getElementById("dish-list")
+                recipes.map(recipe => {
+                    const li = document.createElement("li")
+                    li.appendChild(document.createTextNode(recipe.name))
+                    if (recipe.type === 'snack') {
+                        snackList.appendChild(li)
+                    } else if (recipe.type === 'salad') {
+                        saladList.appendChild(li)
+                    } else {
+                        dishList.appendChild(li)
+                    }
+
+                })
+            })
+            .catch(err => console.log("error occurred", err))
+    </script>
+</body>
+
+</html>
